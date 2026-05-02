@@ -9,15 +9,17 @@
 
 <header class="navbar">
 <div class="logo">Thala <span>7.</span></div>
+
 <div class="nav-links">
 <a href="index.html">Home</a>
-<a href="#">About</a>
-<a href="#">Brands</a>
-<a href="#">Contact</a>
+<a href="product.html">Products</a>
+<a href="cart.html">Cart</a>
+<a href="payment.html">Checkout</a>
 </div>
+
 <div class="nav-icons">
-<input class="search" placeholder="Search">
-🛒
+<input class="search">
+<a href="cart.html">🛒</a>
 <img src="https://i.pravatar.cc/40" class="profile">
 </div>
 </header>
@@ -27,21 +29,15 @@
 <div class="cart-left">
 <h1>Shopping Cart</h1>
 
-<table>
-<tr>
-<th>Product</th>
-<th>Qty</th>
-<th>Price</th>
-</tr>
+<p>Shoe</p>
 
-<tr>
-<td>Shoe</td>
-<td>1</td>
-<td>₹4,999</td>
-</tr>
-</table>
+<button onclick="changeQty(-1)">-</button>
+<span id="qty">1</span>
+<button onclick="changeQty(1)">+</button>
 
-<p style="margin-top:20px;">← Continue Shopping</p>
+<p id="price">₹4,999</p>
+
+<a href="product.html">← Continue Shopping</a>
 </div>
 
 <div class="cart-right">
@@ -50,17 +46,41 @@
 <button>Apply</button>
 
 <div class="summary">
-<p>Sub Total <span>₹4,700</span></p>
+<p>Sub Total <span id="sub">₹4,999</span></p>
 <p>Taxes <span>₹199</span></p>
 <p>Discount <span>₹0</span></p>
-<h3>Total <span>₹4,999</span></h3>
+<h3>Total <span id="total">₹5,198</span></h3>
 </div>
 
-<button class="pay-btn">Pay Now ₹4,999</button>
+<button class="pay-btn" onclick="goPay()">Pay Now</button>
 
 </div>
 
 </section>
+
+<script>
+let qty=1;
+let price=4999;
+
+function changeQty(val){
+qty+=val;
+if(qty<1) qty=1;
+
+document.getElementById("qty").innerText=qty;
+
+let subtotal=qty*price;
+document.getElementById("sub").innerText="₹"+subtotal;
+
+let total=subtotal+199;
+document.getElementById("total").innerText="₹"+total;
+
+document.getElementById("price").innerText="₹"+subtotal;
+}
+
+function goPay(){
+window.location.href="payment.html";
+}
+</script>
 
 </body>
 </html>

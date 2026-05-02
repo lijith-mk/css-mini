@@ -11,12 +11,12 @@
 
 <div class="checkout-left">
 
-<h3 style="color:#888;">Checkout</h3>
+<h3>Checkout</h3>
 
 <label>Email</label>
 <input type="email">
 
-<h2 style="margin-top:20px;">Payment</h2>
+<h2>Payment</h2>
 
 <div class="methods">
 <div class="method active">Card</div>
@@ -47,17 +47,23 @@
 <button>Apply</button>
 
 <div class="summary">
-<p>Sub Total <span>₹4,700</span></p>
+<p>Sub Total <span>₹4,999</span></p>
 <p>Taxes <span>₹199</span></p>
 <p>Discount <span>₹0</span></p>
-<h3>Total <span>₹4,999</span></h3>
+<h3>Total <span>₹5,198</span></h3>
 </div>
 
-<button class="pay-btn">Pay Now ₹4,999</button>
+<button class="pay-btn" onclick="pay()">Pay Now</button>
 
 </div>
 
 </section>
+
+<script>
+function pay(){
+alert("Payment Successful 🎉");
+}
+</script>
 
 </body>
 </html>

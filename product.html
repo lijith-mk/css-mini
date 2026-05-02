@@ -9,15 +9,17 @@
 
 <header class="navbar">
 <div class="logo">Thala <span>7.</span></div>
+
 <div class="nav-links">
 <a href="index.html">Home</a>
-<a href="#">About</a>
-<a href="#">Brands</a>
-<a href="#">Contact</a>
+<a href="product.html">Products</a>
+<a href="cart.html">Cart</a>
+<a href="payment.html">Checkout</a>
 </div>
+
 <div class="nav-icons">
-<input class="search" placeholder="Search">
-🛒
+<input class="search">
+<a href="cart.html">🛒</a>
 <img src="https://i.pravatar.cc/40" class="profile">
 </div>
 </header>
@@ -30,8 +32,7 @@
 
 <div class="product-right">
 <h1>Seven By M.S.Dhoni Running Shoes</h1>
-
-<p>Comfortable and lightweight sneakers for daily use.</p>
+<p>Comfortable and lightweight sneakers.</p>
 
 <div>
 <span class="price">₹1,334</span>
@@ -43,7 +44,8 @@
 <option>2</option>
 </select>
 
-<button class="cart-btn">Add To Cart</button>
+<button class="cart-btn" onclick="addToCart()">Add To Cart</button>
+
 </div>
 
 </section>
@@ -52,6 +54,13 @@
 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
 <img src="https://images.unsplash.com/photo-1584735175097-719d848f8449">
 </div>
+
+<script>
+function addToCart(){
+  alert("Item added to cart");
+  window.location.href="cart.html";
+}
+</script>
 
 </body>
 </html>
